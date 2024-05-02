@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "RandomPythonProject:)"
+version = "0.1.0"
+description = "Non so cosa fa sto progetto..."
+authors = ["RedTy <redty2011@gmail.com>"]
+license = "CC0"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+dependency1 = "^1.0.0"
+dependency2 = "^2.0.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.5"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+main = "main.py:main"
+
+[tool.poetry.urls]
+"Homepage" = "https://404.com"
+"Bug Tracker" = "https://404.com"
