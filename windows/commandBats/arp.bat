@@ -10,10 +10,10 @@ REM Se il file temporaneo non è vuoto, copia il suo contenuto in responseArp.en
 if %FileSize% GTR 0 (
     copy /Y responseArp.tmp responseArp.env > nul
     del responseArp.tmp > nul
-    echo "Comando IPCONFIG eseguito e salvato in responseArp.env"
+    echo "IPCONFIG >>> Comando IPCONFIG eseguito e salvato in responseArp.env"
     timeout /t 2 > nul
-    echo "Attendi... Apertura in corso del file responseArp.env"
-    echo "Ti raccomando di scegliere un'app come Blocco Note"
+    echo "IPCONFIG >>> Attendi... Apertura in corso del file responseArp.env"
+    echo "IPCONFIG >>> Ti raccomando di scegliere un'app come Blocco Note"
     timeout /t 5 > nul
     responseArp.env
 ) else (
