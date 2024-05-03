@@ -3,5 +3,5 @@
 
 # Come si usano?
 
-[!WARNING]
-Il codice è ancora in fase di sviluppo.
+> [!WARNING]
+> Il codice è ancora in fase di sviluppo.
