@@ -3,7 +3,7 @@ name = "RandomPythonProject:)"
 version = "0.1.0"
 description = "Non so cosa fa sto progetto..."
 authors = ["RedTy <redty2011@gmail.com>"]
-license = "CC0"
+license = "MIT"
 
 [tool.poetry.dependencies]
 python = "^3.12"
