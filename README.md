@@ -30,7 +30,7 @@
 
 Il Custom CMD può essere facilmente installato da una riga di codice:
 ```
-git clone [{link di questo repo}](https://github.com/FOXANstudios/tools-per-dilettanti.git)
+git clone https://github.com/FOXANstudios/tools-per-dilettanti
 ```
 Questo custom cmd è stato creato da @redtyyt per alcune lezioni di informatica a persone dilettanti in quest'ultima. Può però anche essere installata da un utente **non registrato alle lezioni private**.
 #
