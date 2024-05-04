@@ -3,6 +3,7 @@ import time
 from dotenv import load_dotenv
 import subprocess
 import os
+import msgBat
 
 load_dotenv()
 arppath = os.getenv("BATPATH")
@@ -61,6 +62,47 @@ def R3():
           !!! ATTENZIONE !!!
           | Gli slash nel path non devono essere così " \ " ma così " / ".
 """)
+    
+def R4():
+    print("Hai preso la versione standard del comando, senza opzioni.")
+    user_input = input("Inserisci il ricevitore del messaggio (ip o *(tutti)). Se vuoi eliminare il comando in cache, fai '-!del>0' >  ")
+    prefisso_cmd_msg = "msg "
+    batch_file_path = "D:/Users/RedTy_ YT/Desktop/things/tools-per-dilettanti/windows/commandBats/msg.bat"
+
+    # Carica le righe esistenti dal file batch
+    if os.path.exists(batch_file_path) and os.path.getsize(batch_file_path) > 0:
+        with open(batch_file_path, "r") as batch_file:
+            lines = batch_file.readlines()
+    else:
+        lines = []
+
+    # Numero totale di righe atteso nel file batch (incluso l'intestazione)
+    total_lines = 6 if lines else 0
+
+    if user_input.lower() == '-!del>0':
+        # Elimina la riga dal file batch e esci dalla funzione
+        if len(lines) >= 6:  # Assicurati che ci siano abbastanza righe nel file
+            del lines[5]
+            total_lines -= 1  # Aggiorna il numero totale di righe
+            with open(batch_file_path, "w") as updated_batch_file:
+                updated_batch_file.writelines(lines)
+            print("Comando eliminato dalla cache.")
+        else:
+            print("Il file batch non ha abbastanza righe. Controlla il file.")
+        return
+
+    # Se l'input non è per eliminare la riga, inserisci il comando nel file batch
+    if len(lines) >= total_lines:  # Assicurati che ci siano abbastanza righe nel file
+        del lines[5]
+        lines.insert(5, prefisso_cmd_msg + user_input + "\n")
+        total_lines += 1  # Aggiorna il numero totale di righe
+        with open(batch_file_path, "w") as updated_batch_file:
+            updated_batch_file.writelines(lines)
+        print("Comando aggiornato nella cache.")
+    else:
+        print("Il file batch non ha abbastanza righe. Controlla il file.")
+    msgBat.esegui_file_batch(batch_file_path="D:/Users/RedTy_ YT/Desktop/things/tools-per-dilettanti/windows/commandBats/msg.bat")
+
 
 def main():
     while True:
@@ -93,8 +135,22 @@ def main():
             time.sleep(2)
             subprocess.call("cls", shell=True)
             break
+        elif user_input.lower() == 'clear':
+            print("Sei sicuro di voler eliminare tutta la cronologia cmd?")
+            user_input = input("Digita 'si' per confermare: ")
+            if user_input.lower() == 'si':
+                print("Eliminazione del cmd corrente...")
+                time.sleep(2)
+                subprocess.call("cls", shell=True)
+            elif user_input.lower() == 'no':
+                continue
+            else:
+                print("Risposta errata. Prova a scrivere una risposta esistente come 'si' o 'no'")
+        elif user_input.lower() == 'msg':
+            R4()
+
         else:
-            print("Comando non eseguito correttamente")
+            print("Comando errato. Prova a scrivere un comando esistente")
 
 if __name__ == "__main__":
     main()
