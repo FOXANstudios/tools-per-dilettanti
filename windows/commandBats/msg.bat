@@ -3,7 +3,7 @@
 echo "MSG >>> Esecuzione comando in corso..."
 
 
-
+msg *
 
 
 

@@ -40,13 +40,22 @@ def R1():
 def R2():
     print("""TOOLS FOR NORMAL PERSONS :)
     Sei nella pagina 1 di aiuto. Per le altre pagine puoi digitare il comando 'help -{pagina che vuoi}'.
+    —————————————————————————————————————————————————————————————————————————————————————————————————————
+          COMANDI DISPONIBILI:
+            'help'
+            'ipconfig'
+            'exit'
+            'msg'
+            'clear'
+            'clearexit'
+    —————————————————————————————————————————————————————————————————————————————————————————————————————
     Aiuto per il comando 'help':
     help -{comando} --> puoi digitare il comando 'help -{comando}' per avere informazioni sul comando richiesto.
     —————————————————————————————————————————————————————————————————————————————————————————————————————
 
     Aiuto per il comando 'ipconfig':
     help -ipconfig --> puoi digitare il comando 'help -ipconfig' per avere informazioni sul comando.
-    """)
+    """ + f"")
 
 
 def R3():
