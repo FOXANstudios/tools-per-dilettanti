@@ -74,6 +74,9 @@ Questo custom cmd è stato creato da @redtyyt per alcune lezioni di informatica 
 #
 # msg
 
+> [!WARNING]
+> Questo comando può funzionare solo su Windows 11 Pro
+
 - **Scopo**: Il comando 'msg' usa un comando Windows in un file bat che manda un messaggio a l'ip, utente selezionato.
 
 - **Opzioni**: ricevitore = *, {ip}, {nome_pc}; messaggio = {messaggio}
